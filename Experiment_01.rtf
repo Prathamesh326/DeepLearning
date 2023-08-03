@@ -1,0 +1,148 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset255 Calibri Light;}{\f2\fnil\fcharset0 Calibri;}{\f3\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red79\green129\blue189;}
+{\*\listtable 
+{\list\listhybrid
+{\listlevel\levelnfc0\leveljc0\levelstartat1{\leveltext\'02\'00.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc4\leveljc0\levelstartat1{\leveltext\'02\'01.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc3\leveljc0\levelstartat1{\leveltext\'02\'02.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc2\leveljc0\levelstartat1{\leveltext\'02\'03.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc1\leveljc0\levelstartat1{\leveltext\'02\'04.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc0\leveljc0\levelstartat1{\leveltext\'02\'05.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc4\leveljc0\levelstartat1{\leveltext\'02\'06.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc3\leveljc0\levelstartat1{\leveltext\'02\'07.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc23\leveljc1\levelstartat1{\leveltext\'01\'B7;}{\levelnumbers;}\f3\jclisttab\tx0}\listid1 }}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+{\*\generator Riched20 10.0.22000}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qj\ul\b\f0\fs28\lang9 Experiment No : 01\ulnone\par
+\par
+\fs36 TensorFlow\fs28\par
+Introduction\par
+\b0\fs24 TensorFlow is an open-source software library. TensorFlow was originally developed by researchers and engineers working on the Google Brain Team within Google\rquote s Machine Intelligence research organization for the purposes of conducting machine learning and deep neural networks research, but the system is general enough to be applicable in a wide variety of other domains as well! Let us first try to understand what the word TensorFlow actually mean! TensorFlow is basically a software library for numerical computation using data flow graphs \par
+where:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj\b nodes \b0 in the graph represent mathematical operations.\par
+{\pntext\f3\'B7\tab}\b edges \b0 in the graph represent the multidimensional data arrays (called tensors) communicated between them. (Please note that tensor is the central unit of data in TensorFlow).\par
+
+\pard\sa200\sl276\slmult1\qj\par
+TensorFlow provides multiple APIs (Application Programming Interfaces). These can be classified into 2 major categories:\par
+\par
+1.Low level API:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj complete programming control\par
+{\pntext\f3\'B7\tab}recommended for machine learning researchers\par
+{\pntext\f3\'B7\tab}provides fine levels of control over the models\par
+{\pntext\f3\'B7\tab}TensorFlow Core is the low level API of TensorFlow.\par
+
+\pard\sa200\sl276\slmult1\qj 2.High level API:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj built on top of TensorFlow Core\par
+{\pntext\f3\'B7\tab}easier to learn and use than TensorFlow Core\par
+{\pntext\f3\'B7\tab}make repetitive tasks easier and more consistent between different users\par
+{\pntext\f3\'B7\tab}tf.contrib.learn is an example of a high level API.\par
+
+\pard\sa200\sl276\slmult1\qj\par
+
+\pard\sa200\sl276\slmult1\qj\b Installing TensorFlow\b0\par
+An easy to follow guide for TensorFlow installation is available here: Installing TensorFlow. Once installed, you can ensure a successful installation by running this command in python interpreter:\par
+\cf1\f1\lang1033 import tensorflow as tf\cf0\par
+\par
+\b\f0\lang9 Tensors\b0\par
+TensorFlow operates on multidimensional arrays or tensors represented as \b tf.Tensor \b0 objects. Here is a two-dimensional tensor:\par
+\par
+\cf1\i\f2 import tensorflow as tf\par
+x = tf.constant([[1., 2., 3.],\par
+                 [4., 5., 6.]])\par
+print(x)\par
+print(x.shape)\par
+print(x.dtype)\par
+\cf0\par
+\i0\f0 The most important attributes of a \b tf.Tensor \b0 are its \b shape\b0  and \b dtype\b0 :\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj\b Tensor.shape\b0 : tells you the size of the tensor along each of its axes.\par
+{\pntext\f3\'B7\tab}\b Tensor.dtype\b0 : tells you the type of all the elements in the tensor.\i\par
+
+\pard\sa200\sl276\slmult1\qj\par
+\b\i0\fs32 Methods\par
+\fs28 Tensorflow log() method\fs32\par
+\b0\fs24 The module \cf1 tensorflow.math \cf0 provides support for many basic mathematical operations. Function tf.log() [alias tf.math.log] provides support for the natural logarithmic function in Tensorflow. It expects the input in form of complex numbers as  a+bi  or floating point numbers. The input type is tensor and if the input contains more than one element, an element-wise logarithm is computed, y=log\sub e\nosupersub  \super x\nosupersub   .\i\par
+\b\i0 Syntax\b0 : tf.log(x, name=None) or tf.math.log(x, name=None)\par
+\b Parameters\b0 : \par
+\b x\b0 : A Tensor of type bfloat16, half, float32, float64, complex64 or complex128. \par
+\b name \b0 (optional): The name for the operation.\par
+\b Return type\b0 : A Tensor with the same size and type as that of x. \par
+\par
+ \b\fs28 Tensorflow abs() method\b0\fs24\par
+The module \cf1 tensorflow.math \cf0 provides support for many basic mathematical operations. Function tf.abs() [alias tf.math.abs] provides support for the absolute function in Tensorflow. It expects the input in form of complex numbers as  a+bi  or floating point numbers. The input type is tensor and if the input contains more than one element, an element-wise absolute value is computed.\par
+\par
+For a complex number  a+bi , the absolute value is computed as  \\sqrt\{a\super 2\nosupersub +b\super 2\nosupersub\} .\par
+For floating point numbers  a , the absolute value is computed as  a if a>=0,  else -a.  \par
+\par
+Syntax: tf.abs(x, name=None) or tf.math.abs(x, name=None)\par
+Parameters:\par
+x: A Tensor or SparseTensor of type float16, float32, float64, int32, int64, complex64 or complex128.\par
+name (optional): The name for the operation.\par
+\par
+Return type: A Tensor or SparseTensor with the same size and type as that of x with absolute values. For complex64 or complex128 input, the returned Tensor will be of type float32 or float64, respectively.\par
+\par
+\b\fs28 Tensorflow exp() method\par
+\b0\fs24 The module \cf1 tensorflow.math \cf0 provides support for many basic mathematical operations. Function tf.exp() [alias tf.math.exp] provides support for the exponential function in Tensorflow. It expects the input in form of complex numbers as a+bi  or floating point numbers. The input type is tensor and if the input contains more than one element, an element-wise exponential value is computed, y=e\super x\nosupersub   .\par
+\b Syntax\b0 : tf.exp(x, name=None) or tf.math.exp(x, name=None)\par
+\b Parameters\b0 : \par
+\b x\b0 : A Tensor of type bfloat16, half, float32, float64, complex64 or complex128. \par
+\b name \b0 (optional): The name for the operation.\par
+\b Return type\b0 : A Tensor with the same size and type as that of x. \par
+\par
+\par
+\par
+\b\fs36 Keras\par
+\fs28 Introduction\fs36\par
+\b0\fs24 Keras is an open-source high-level Neural Network library, which is written in Python is capable enough to run on Theano, TensorFlow, or CNTK. It was developed by one of the Google engineers, Francois Chollet. It is made user-friendly, extensible, and modular for facilitating faster experimentation with deep neural networks. It not only supports Convolutional Networks and Recurrent Networks individually but also their combination.\par
+It cannot handle low-level computations, so it makes use of the \b Backend \b0 library to resolve it. The backend library act as a high-level API wrapper for the low-level API, which lets it run on TensorFlow, CNTK, or Theano.\par
+Initially, it had over 4800 contributors during its launch, which now has gone up to 250,000 developers. It has a 2X growth ever since every year it has grown. Big companies like Microsoft, Google, NVIDIA, and Amazon have actively contributed to the development of Keras. It has an amazing industry interaction, and it is used in the development of popular firms likes Netflix, Uber, Google, Expedia, etc.\par
+\b What makes Keras special?\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj Focus on user experience has always been a major part of Keras.\par
+{\pntext\f3\'B7\tab}Large adoption in the industry.\par
+{\pntext\f3\'B7\tab}It is a multi backend and supports multi-platform, which helps all the encoders come together for coding.\par
+{\pntext\f3\'B7\tab}Research community present for Keras works amazingly with the production community.\par
+{\pntext\f3\'B7\tab}Easy to grasp all concepts.\par
+{\pntext\f3\'B7\tab}It supports fast prototyping.\par
+{\pntext\f3\'B7\tab}It seamlessly runs on CPU as well as GPU.\par
+{\pntext\f3\'B7\tab}It provides the freedom to design any architecture, which then later is utilized as an API for the project.\par
+{\pntext\f3\'B7\tab}It is really very simple to get started with.\par
+{\pntext\f3\'B7\tab}Easy production of models actually makes Keras special.\par
+
+\pard\sa200\sl276\slmult1\qj\par
+\b\fs28 Keras Backend\b0\fs24\par
+Keras being a model-level library helps in developing deep learning models by offering high-level building blocks. All the low-level computations such as products of Tensor, convolutions, etc. are not handled by Keras itself, rather they depend on a specialized tensor manipulation library that is well optimized to serve as a backend engine. Keras has managed it so perfectly that instead of incorporating one single library of tensor and performing operations related to that particular library, it offers plugging of different backend engines into Keras.\par
+\par
+Keras consist of three backend engines, which are as follows:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj\b TensorFlow\b0\par
+
+\pard\sa200\sl276\slmult1\qj TensorFlow is a Google product, which is one of the most famous deep learning tools widely used in the research area of machine learning and deep neural network. It came into the market on 9th November 2015 under the Apache License 2.0. It is built in such a way that it can easily run on multiple CPUs and GPUs as well as on mobile operating systems. It consists of various wrappers in distinct languages such as Java, C++, or Python.\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj\b Theano\b0\par
+
+\pard\sa200\sl276\slmult1\qj Theano was developed at the University of Montreal, Quebec, Canada, by the MILA group. It is an open-source python library that is widely used for performing mathematical operations on multi-dimensional arrays by incorporating scipy and numpy. It utilizes GPUs for faster computation and efficiently computes the gradients by building symbolic graphs automatically. It has come out to be very suitable for unstable expressions, as it first observes them numerically and then computes them with more stable algorithms.\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls1\ilvl8\fi-360\li720\sa200\sl276\slmult1\qj\b CNTK\b0\par
+
+\pard\sa200\sl276\slmult1\qj Microsoft Cognitive Toolkit is deep learning's open-source framework. It consists of all the basic building blocks, which are required to form a neural network. The models are trained using C++ or Python, but it incorporates C# or Java to load the model for making predictions.\par
+\par
+\b Advantages of Keras\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj\b0 It is very easy to understand and incorporate the faster deployment of network models.\par
+{\pntext\f3\'B7\tab}It has huge community support in the market as most of the AI companies are keen on using it.\par
+{\pntext\f3\'B7\tab}It supports multi backend, which means you can use any one of them among TensorFlow, CNTK, and Theano with Keras as a backend according to your requirement.\par
+
+\pard\sa200\sl276\slmult1\qj\par
+\b Disadvantages of Keras\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj\b0 The only disadvantage is that Keras has its own pre-configured layers, and if you want to create an abstract layer, it won't let you because it cannot handle low-level APIs. It only supports high-level API running on the top of the backend engine (TensorFlow, Theano, and CNTK).\par
+
+\pard\sa200\sl276\slmult1\qj\par
+\par
+}
+ 
